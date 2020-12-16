@@ -12,15 +12,7 @@
       <div class="">
         <div class="x_content">
           <div class="row">
-            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <div class="tile-stats">
-                <div class="icon"><i class="fa fa-file-text"></i>
-                </div>
-                <div class="count"><?= $total_article ?></div>
-                <h3>Artikel</h3>
-                <p>Jumlah Artikel</p>
-              </div>
-            </div>
+
             <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
               <div class="tile-stats">
                 <div class="icon"><i class="fa fa-cube"></i>
