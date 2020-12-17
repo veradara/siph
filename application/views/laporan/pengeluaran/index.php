@@ -11,7 +11,14 @@
 
         </div>
         <hr>
-        <div class="row">
+        <h3 style="text-align:center;">
+            <?php $no = 1;
+            foreach ($saldoku as $data) : ?>
+                <b>Total Pengeluaran :</b> Rp. <?= number_format($data->total, 0, ',', '.'); ?>
+            <?php endforeach ?>
+        </h3>
+        <br>
+        <div style="text-align:center;" class="row">
             <form action="<?= base_url('laporan/pengeluaran/laporan_pengeluaran_pdf'); ?>" method="POST" class="form-inline">
                 <div class="form-group mb-2">
                     <label for="dari">Dari </label>
@@ -25,6 +32,7 @@
             </form>
 
         </div>
+        <br>
         <div class="table-responsive m-b-40">
             <table class="table table-borderless table-data3" id="datatable">
                 <thead>
@@ -57,13 +65,6 @@
         </div>
         <!-- END DATA TABLE-->
 
-        <div class="row m-t-30">
-            <div class="col-sm-12">
-                <?php $no = 1;
-                foreach ($saldoku as $data) : ?>
-                    <p><b>Total Pengeluaran :</b> Rp. <?= number_format($data->total, 0, ',', '.'); ?></p>
-                <?php endforeach ?>
-            </div>
-        </div>
+
     </div>
 </div>
