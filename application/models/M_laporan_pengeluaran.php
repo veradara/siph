@@ -14,6 +14,7 @@ class M_laporan_pengeluaran extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('product');
+        $this->db->order_by('id_product', 'desc');
         $result = $this->db->get();
 
         return $result->result();
