@@ -15,6 +15,7 @@ class M_laporan_pemasukan extends CI_Model
         $this->db->select('*');
         $this->db->from('checkouts');
         $this->db->where('payment_status', '2');
+        $this->db->order_by('id_checkout', 'desc');
         $result = $this->db->get();
 
         return $result->result();
