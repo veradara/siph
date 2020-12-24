@@ -83,6 +83,8 @@ class Checkouts extends CI_Controller
             'id_cart'          => $id_cart,
             'total_price'      => $total,
             'updated_at'      => date('Y-m-d H:i:s'),
+            'bulan'      => date('m'),
+            'tahun'      => date('Y'),
             'payment_status' => '0',
         ];
 

@@ -85,6 +85,17 @@ class M_laporan_pemasukan extends CI_Model
 
         return $result->result();
     }
+    public function getPemasukanbybulantahun($keyword1, $keyword2)
+    {
+        $this->db->select('*');
+        $this->db->from('checkouts');
+        $this->db->where('payment_status', '2');
+        $this->db->where('bulan =', $keyword1);
+        $this->db->where('tahun =', $keyword2);
+        $result = $this->db->get();
+
+        return $result->result();
+    }
     public function getTotalPemasukanBydate($keyword1, $keyword2)
     {
         $this->db->select('sum(checkouts.total_price) as total');
@@ -92,6 +103,17 @@ class M_laporan_pemasukan extends CI_Model
         $this->db->where('payment_status', '2');
         $this->db->where('updated_at >=', $keyword1);
         $this->db->where('updated_at <=', $keyword2);
+        $result = $this->db->get();
+
+        return $result->result();
+    }
+    public function getTotalPemasukanBulanTahun($keyword1, $keyword2)
+    {
+        $this->db->select('sum(checkouts.total_price) as total');
+        $this->db->from('checkouts');
+        $this->db->where('payment_status', '2');
+        $this->db->where('bulan=', $keyword1);
+        $this->db->where('tahun=', $keyword2);
         $result = $this->db->get();
 
         return $result->result();

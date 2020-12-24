@@ -73,6 +73,23 @@ class Pemasukan extends CI_Controller
         $this->dompdf->render();
         $this->dompdf->stream("laporan_data_keuangan.pdf", ['Attachment' => 0]);
     }
+    public function laporan_pemasukan()
+    {
+
+        $keyword1 = $this->input->post('bulan');
+        $keyword2 = $this->input->post('tahun');
+        $data = [
+            'awal' =>  $keyword1,
+            'akhir' => $keyword2,
+            'saldoku' => $this->M_laporan_pemasukan->getTotalPemasukanBulanTahun($keyword1, $keyword2),
+            'pemasukan' => $this->M_laporan_pemasukan->getAll(),
+            'logo' => '<img src="assets/images/logo-default.png" alt="" height="40" class="mr-3">',
+            'gambar' => './uploads/bukti/'
+        ];
+        $data['laporanpemasukan'] = $this->M_laporan_pemasukan->getPemasukanbybulantahun($keyword1, $keyword2);
+        $this->template->load('default', 'contents', '/laporan/pdf/Pemasukan', $data);
+        // $this->load->view('/laporan/pdf/Pemasukan', $data);
+    }
 
 
     public function add($id = '')
