@@ -89,7 +89,6 @@ class Pengeluaran extends CI_Controller
         $this->template->load('default', 'contents', '/laporan/pdf/Pengeluaran', $data);
     }
 
-
     public function add($id = '')
     {
         $this->template->set('title', 'Artikel Petshop Ku');
