@@ -73,6 +73,22 @@ class Pengeluaran extends CI_Controller
         $this->dompdf->stream("laporan_data_keuangan.pdf", ['Attachment' => 0]);
     }
 
+    public function laporan_pengeluaran()
+    {
+        $keyword1 = $this->input->post('bulan');
+        $keyword2 = $this->input->post('tahun');
+        $data = [
+            'awal' =>  $keyword1,
+            'akhir' => $keyword2,
+            'saldoku' => $this->M_laporan_pengeluaran->getTotalPengeluaranBulanTahun($keyword1, $keyword2),
+            'pengeluaran' => $this->M_laporan_pengeluaran->getAll(),
+            'logo' => '<img src="assets/images/logo-default.png" alt="" height="40" class="mr-3">',
+            'gambar' => './uploads/produk/'
+        ];
+        $data['laporanpengeluaran'] = $this->M_laporan_pengeluaran->getPengeluaranBulanTahun($keyword1, $keyword2);
+        $this->template->load('default', 'contents', '/laporan/pdf/Pengeluaran', $data);
+    }
+
 
     public function add($id = '')
     {

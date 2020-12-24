@@ -96,6 +96,8 @@ class Produk extends Base
                         'description'            => $this->input->post('description'),
                         'created_at'     => date('Y-m-d H:i:s'),
                         'updated_at'     => date('Y-m-d H:i:s'),
+                        'bulan'      => date('m'),
+                        'tahun'      => date('Y'),
                         'file'           => $data['file_name'],
                         'updated_by'     => $userdata['id']
                     );

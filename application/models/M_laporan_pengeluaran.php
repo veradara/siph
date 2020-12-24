@@ -61,6 +61,26 @@ class M_laporan_pengeluaran extends CI_Model
 
         return $result->result();
     }
+    public function getPengeluaranBulanTahun($keyword1, $keyword2)
+    {
+        $this->db->select('*');
+        $this->db->from('product');
+        $this->db->where('bulan=', $keyword1);
+        $this->db->where('tahun=', $keyword2);
+        $result = $this->db->get();
+
+        return $result->result();
+    }
+    public function getTotalPengeluaranBulanTahun($keyword1, $keyword2)
+    {
+        $this->db->select('sum(product.price) as total');
+        $this->db->from('product');
+        $this->db->where('bulan=', $keyword1);
+        $this->db->where('tahun=', $keyword2);
+        $result = $this->db->get();
+
+        return $result->result();
+    }
     public function getTotalPengeluaranBydate($keyword1, $keyword2)
     {
         $this->db->select('sum(product.price) as total');
