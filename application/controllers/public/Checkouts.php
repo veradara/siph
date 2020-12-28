@@ -29,6 +29,7 @@ class Checkouts extends CI_Controller
 
         $data['cat_prod'] = $this->m_home->get_category_product();
         $data['all_history'] = $this->m_checkouts->get_all_history();
+        // $data['all_history'] = $this->m_checkouts->getAll();
 
         $data['title'] = 'Petshop';
         $data['count_cart'] = $this->m_home->get_count_cart();
@@ -85,6 +86,7 @@ class Checkouts extends CI_Controller
             'updated_at'      => date('Y-m-d H:i:s'),
             'bulan'      => date('m'),
             'tahun'      => date('Y'),
+            'pembeli'      => $this->session->userdata('id'),
             'payment_status' => '0',
         ];
 

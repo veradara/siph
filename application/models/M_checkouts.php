@@ -1,10 +1,12 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class M_checkouts extends CI_Model {
+class M_checkouts extends CI_Model
+{
 
-	
-    function __construct() {
+
+    function __construct()
+    {
         // Call the Model constructor
         parent::__construct();
         // load encrypt
@@ -12,13 +14,23 @@ class M_checkouts extends CI_Model {
         $this->db = $this->load->database('default', true);
     }
 
+    public function getAll()
+    {
+        $this->db->select('*');
+        $this->db->from('checkouts');
+        $this->db->order_by('id_checkout', 'desc');
+        $result = $this->db->get();
 
+        return $result->result();
+    }
     // get all emergency_call data
-    function get_all_history(){
+    function get_all_history()
+    {
         $userdata = $this->session->all_userdata();
+        $id_users = $this->session->userdata('id');
         $sql = "SELECT cc.* FROM checkouts cc 
                 LEFT JOIN cart c ON c.id_cart = c.id_cart
-                WHERE c.id_user = ?
+                WHERE cc.pembeli = $id_users IS NOT NULL 
                 GROUP BY cc.id_checkout
                 ORDER BY id_checkout DESC";
         $query = $this->db->query($sql, $userdata['id']);
@@ -34,7 +46,8 @@ class M_checkouts extends CI_Model {
         }
     }
 
-    function get_all_checkout_list($id_cart){
+    function get_all_checkout_list($id_cart)
+    {
         $sql = "SELECT cl.*, p.name, p.price, p.file FROM cart_list cl
                 INNER JOIN cart c ON cl.id_cart = c.id_cart
                 INNER JOIN product p ON cl.id_product = p.id_product
@@ -60,7 +73,6 @@ class M_checkouts extends CI_Model {
     {
         $this->db->update('checkouts', $data, $where);
         return ($this->db->affected_rows() != 1) ? false : true;
-
     }
 }
 
