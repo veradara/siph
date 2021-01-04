@@ -30,7 +30,7 @@ class M_checkouts extends CI_Model
         $id_users = $this->session->userdata('id');
         $sql = "SELECT cc.* FROM checkouts cc 
                 LEFT JOIN cart c ON c.id_cart = c.id_cart
-                WHERE cc.pembeli = $id_users IS NOT NULL 
+                WHERE cc.pembeli = ?
                 GROUP BY cc.id_checkout
                 ORDER BY id_checkout DESC";
         $query = $this->db->query($sql, $userdata['id']);
