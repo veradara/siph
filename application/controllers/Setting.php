@@ -69,10 +69,10 @@ class Setting extends Base
             // insert process
             $return = $this->m_setting->update($update, $where);
             if ($return) {
-                $this->session->set_flashdata('success', 'Data berhasil disimpan !!');
+                $this->session->set_flashdata('success', 'Data Setting berhasil disimpan !!');
                 redirect('setting');
             } else {
-                $this->session->set_flashdata('error', 'Data gagal disimpan !!');
+                $this->session->set_flashdata('error', 'Data Setting gagal disimpan !!');
                 redirect('setting');
             }
         }

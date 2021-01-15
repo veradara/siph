@@ -132,10 +132,10 @@ class Users extends Base
             // insert process
             $return = $this->m_users->insert_users($insert);
             if ($return) {
-                $this->session->set_flashdata('success', 'Data berhasil disimpan !!');
+                $this->session->set_flashdata('success', 'Data User berhasil disimpan !!');
                 redirect('users/add/');
             } else {
-                $this->session->set_flashdata('error', 'Data gagal disimpan !!');
+                $this->session->set_flashdata('error', 'Data User gagal disimpan !!');
                 redirect('users/add/');
             }
         }
@@ -228,10 +228,10 @@ class Users extends Base
             // insert process
             $return = $this->m_users->update_users($update, $where);
             if ($return) {
-                $this->session->set_flashdata('success', 'Data berhasil disimpan !!');
+                $this->session->set_flashdata('success', 'Data User berhasil diubah !!');
                 redirect('users/edit/' . $this->input->post('id_users'));
             } else {
-                $this->session->set_flashdata('error', 'Data gagal disimpan !!');
+                $this->session->set_flashdata('error', 'Data User gagal diubah !!');
                 redirect('users/edit/' . $this->input->post('id_users'));
             }
         }
@@ -250,11 +250,11 @@ class Users extends Base
             // delete process
             if ($this->m_users->delete_users(array('id_users' => $id))) {
                 // notification
-                $this->session->set_flashdata('success', 'Data berhasil di hapus !!');
+                $this->session->set_flashdata('success', 'Data User berhasil di hapus !!');
                 redirect('users');
             } else {
                 // notification
-                $this->session->set_flashdata('error', 'Data gagal di hapus !!');
+                $this->session->set_flashdata('error', 'Data User gagal di hapus !!');
                 redirect('users');
             }
         } else {
