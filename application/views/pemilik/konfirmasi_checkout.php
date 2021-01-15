@@ -1,5 +1,7 @@
-<h1 class="h3 mb-4 text-gray-800">Laporan penjualan</h1>
-
+<div style="text-align: center;">
+    <h1 class="h3 mb-4 text-gray-800">Laporan penjualan</h1>
+    <p><b>Total penjualan :</b> <?= number_format($get_total_penjualan, 0, ',', '.'); ?></p>
+</div>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Data Penjualan</h6>
@@ -55,11 +57,6 @@
 
                 </tbody>
             </table>
-        </div>
-        <div class="row m-t-30">
-            <div class="col-sm-12">
-                <p><b>Total penjualan :</b> <?= number_format($get_total_penjualan, 0, ',', '.'); ?></p>
-            </div>
         </div>
     </div>
 </div>
