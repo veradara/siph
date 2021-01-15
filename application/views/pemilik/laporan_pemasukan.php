@@ -1,17 +1,23 @@
-<h1 class="h3 mb-4 text-gray-800">Laporan Pemasukan</h1>
-<div class="row">
-    <form action="<?= base_url('pemilik/pemilik/laporan_pemasukan_pdf'); ?>" method="POST" class="form-inline">
-        <div class="form-group mb-2">
-            <label for="dari">Dari </label>
-            <input type="datetime-local" class="form-control ml-2" id="dari" name="keyword1">
-        </div>
-        <div class="form-group mx-sm-3 mb-2">
-            <label for="sampai">Sampai </label>
-            <input type="datetime-local" class="form-control ml-2" id="sampai" name="keyword2">
-        </div>
-        <button type="submit" class="au-btn btn-danger m-b-20"><i class="far fa-file-pdf"></i> cetak</button>
-    </form>
+<div style="text-align: center;" class="col-sm-12">
+    <h1 class="h3 mb-4 text-gray-800">Laporan Pemasukan</h1>
+    <?php $no = 1;
+    foreach ($saldoku as $data) : ?>
+        <p><b>Total Pemasukan :</b> Rp. <?= number_format($data->total, 0, ',', '.'); ?></p>
+    <?php endforeach ?>
+    <div style="margin-left: 150px;" class="row">
+        <form action="<?= base_url('pemilik/pemilik/laporan_pemasukan_pdf'); ?>" method="POST" class="form-inline">
+            <div class="form-group mb-2">
+                <label for="dari">Dari </label>
+                <input type="datetime-local" class="form-control ml-2" id="dari" name="keyword1">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <label for="sampai">Sampai </label>
+                <input type="datetime-local" class="form-control ml-2" id="sampai" name="keyword2">
+            </div>
+            <button type="submit" class="au-btn btn-danger m-b-20"><i class="far fa-file-pdf"></i> cetak</button>
+        </form>
 
+    </div>
 </div>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
@@ -51,12 +57,7 @@
             </table>
         </div>
         <div class="row m-t-30">
-            <div class="col-sm-12">
-                <?php $no = 1;
-                foreach ($saldoku as $data) : ?>
-                    <p><b>Total Pemasukan :</b> Rp. <?= number_format($data->total, 0, ',', '.'); ?></p>
-                <?php endforeach ?>
-            </div>
+
         </div>
     </div>
 
