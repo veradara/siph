@@ -119,10 +119,10 @@ class Produk extends Base
             // insert process
             $return = $this->m_produk->insert_produk($insert);
             if ($return) {
-                $this->session->set_flashdata('success', 'Data berhasil disimpan !!');
+                $this->session->set_flashdata('success', 'Data Produk berhasil disimpan !!');
                 redirect('produk/add');
             } else {
-                $this->session->set_flashdata('error', 'Data gagal disimpan !!');
+                $this->session->set_flashdata('error', 'Data Produk gagal disimpan !!');
                 redirect('produk/add');
             }
         }
@@ -195,10 +195,10 @@ class Produk extends Base
             // insert process
             $return = $this->m_produk->update_produk($update, $where);
             if ($return) {
-                $this->session->set_flashdata('success', 'Data berhasil disimpan !!');
+                $this->session->set_flashdata('success', 'Data Produk berhasil diubah !!');
                 redirect('produk/edit/' . $this->input->post('id_product'));
             } else {
-                $this->session->set_flashdata('error', 'Data gagal disimpan !!');
+                $this->session->set_flashdata('error', 'Data Produk gagal diubah !!');
                 redirect('produk/edit/' . $this->input->post('id_product'));
             }
         }
@@ -217,16 +217,16 @@ class Produk extends Base
             // delete process
             if ($this->m_produk->delete_produk(array('id_product' => $id))) {
                 // notification
-                $this->session->set_flashdata('success', 'Data berhasil di hapus !!');
+                $this->session->set_flashdata('success', 'Data Produk berhasil di hapus !!');
                 redirect('produk');
             } else {
                 // notification
-                $this->session->set_flashdata('error', 'Data gagal di hapus !!');
+                $this->session->set_flashdata('error', 'Data Produk gagal di hapus !!');
                 redirect('produk');
             }
         } else {
             // notification
-            $this->session->set_flashdata('error', 'Data gagal di hapus !!');
+            $this->session->set_flashdata('error', 'Data Produk gagal di hapus !!');
             redirect('produk');
         }
     }

@@ -13,7 +13,7 @@
 						<div class="cart_items">
 							<ul class="cart_list">
 								<li class="cart_item clearfix">
-									<h5>Silah kan transfer ke salah satu rekening berikut ini :</h5>
+									<h5>Silahkan transfer ke salah satu rekening berikut ini :</h5>
 
 									<table class="table">
 										<tr>
@@ -22,7 +22,7 @@
 												<img src="https://1.bp.blogspot.com/-QP4vt4BcT6E/WgO4eSbEKoI/AAAAAAAAEoY/QpI27S8JkN402sNJvw6QnOxX0s6Q_ub2QCLcBGAs/w1200-h630-p-k-no-nu/mandiri.jpg" width="100px">
 											</td>
 											<td>
-												A/N : Dara<br>
+												A/N : Vera<br>
 												No Rek . 3847677577722
 											</td>
 										</tr>
@@ -32,7 +32,7 @@
 												<img src="https://2.bp.blogspot.com/-lOAvxqPQ23s/WgO53cUvDOI/AAAAAAAAEoo/hiWQzddn0Vcu6FTQFU3iPnfe0jBqqvZowCLcBGAs/s320/bca.jpg" width="100px">
 											</td>
 											<td>
-												A/N : Dara<br>
+												A/N : Vera<br>
 												No Rek . 708307576576
 											</td>
 										</tr>
@@ -42,7 +42,7 @@
 												<img src="https://cdn3.iconfinder.com/data/icons/banks-in-indonesia-logo-badge/100/BRI-512.png" width="100px">
 											</td>
 											<td>
-												A/N : Dara<br>
+												A/N : Vera<br>
 												No Rek . 8768787877899
 											</td>
 										</tr>

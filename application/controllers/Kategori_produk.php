@@ -76,10 +76,10 @@ class Kategori_produk extends Base
             // insert process
             $return = $this->m_produk->insert_categories($insert);
             if ($return) {
-                $this->session->set_flashdata('success', 'Data berhasil disimpan !!');
+                $this->session->set_flashdata('success', 'Data Kategori berhasil disimpan !!');
                 redirect('kategori_produk/add');
             } else {
-                $this->session->set_flashdata('error', 'Data gagal disimpan !!');
+                $this->session->set_flashdata('error', 'Data Kategori gagal disimpan !!');
                 redirect('kategori_produk/add');
             }
         }
@@ -112,10 +112,10 @@ class Kategori_produk extends Base
             // insert process
             $return = $this->m_produk->update_categories($update, $where);
             if ($return) {
-                $this->session->set_flashdata('success', 'Data berhasil disimpan !!');
+                $this->session->set_flashdata('success', 'Data Kategori berhasil diubah !!');
                 redirect('kategori_produk/edit/' . $this->input->post('id_product_categories'));
             } else {
-                $this->session->set_flashdata('error', 'Data gagal disimpan !!');
+                $this->session->set_flashdata('error', 'Data Kategori gagal diubah !!');
                 redirect('kategori_produk/edit/' . $this->input->post('id_product_categories'));
             }
         }
@@ -134,16 +134,16 @@ class Kategori_produk extends Base
             // delete process
             if ($this->m_produk->delete_categories(array('id_product_categories' => $id))) {
                 // notification
-                $this->session->set_flashdata('success', 'Data berhasil di hapus !!');
+                $this->session->set_flashdata('success', 'Data Kategori berhasil di hapus !!');
                 redirect('kategori_produk');
             } else {
                 // notification
-                $this->session->set_flashdata('error', 'Data gagal di hapus !!');
+                $this->session->set_flashdata('error', 'Data Kategori gagal di hapus !!');
                 redirect('kategori_produk');
             }
         } else {
             // notification
-            $this->session->set_flashdata('error', 'Data gagal di hapus !!');
+            $this->session->set_flashdata('error', 'Data Kategori gagal di hapus !!');
             redirect('kategori_produk');
         }
     }

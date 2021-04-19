@@ -13,7 +13,6 @@
 								<ul class="cart_list">
 									<li class="cart_item clearfix">
 										<h2>Selamat , Registrasi berhasil</h2>
-										<h5>Check email anda untuk aktivasi akun dan mulai login</h5>
 									</li>
 								</ul>
 							</div>	
