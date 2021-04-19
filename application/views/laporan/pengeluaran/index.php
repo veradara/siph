@@ -71,6 +71,7 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
+                        <th>Quantity</th>
                         <th>Tanggal</th>
                         <th>Total Harga</th>
                         <th>Foto</th>
@@ -83,6 +84,7 @@
                         <tr>
                             <td><?= $no++; ?></td>
                             <td><?= $kat->name; ?></td>
+                            <td><?= $kat->quantity; ?></td>
                             <td><?= $kat->updated_at; ?></td>
                             <td>Rp. <?= number_format($kat->price, 0, ',', '.'); ?></td>
                             <td>
